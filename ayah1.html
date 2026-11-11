@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Father's Day, AYAH! 🤎</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@500;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: #f7efe5;
+    color: #67452f;
+}
+
+#welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f8eee2, #e9d5bf);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.welcome-card {
+    background: #fffaf3;
+    padding: 40px 30px;
+    border-radius: 25px;
+    border: 2px solid #c7a77f;
+    box-shadow: 0 15px 35px rgba(103, 69, 47, 0.2);
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    animation: fadeIn 1s ease;
+}
+
+.welcome-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #67452f;
+    margin-bottom: 15px;
+}
+
+.welcome-card p {
+    font-size: 14px;
+    color: #806b59;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.start-btn {
+    background: #79563c;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(121, 86, 60, 0.3);
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    background: #b58b5c;
+    transform: translateY(-3px);
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f8eee2, #e9d5bf);
+}
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    animation: fadeIn 1.5s ease;
+}
+
+.top {
+    letter-spacing: 4px;
+    font-size: 12px;
+    color: #a47b56;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 7vw, 65px);
+    color: #67452f;
+}
+
+h1 span {
+    font-family: 'Dancing Script', cursive;
+    color: #b58b5c;
+}
+
+.photo-frame {
+    width: 230px;
+    height: 270px;
+    margin: 30px auto;
+    padding: 9px;
+    background: #fffaf3;
+    border: 2px solid #c7a77f;
+    border-radius: 120px 120px 20px 20px;
+    box-shadow: 0 12px 30px #67452f30;
+    transform: rotate(-2deg);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 110px 110px 13px 13px;
+}
+
+.hero p {
+    line-height: 2;
+    color: #806b59;
+    margin: 20px auto;
+    max-width: 550px;
+    font-size: 14px;
+}
+
+.btn {
+    display: inline-block;
+    background: #79563c;
+    color: white;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #b58b5c;
+    transform: translateY(-4px);
+}
+
+.appreciation {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    color: #987c64;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 950px;
+    margin: auto;
+}
+
+.card {
+    background: #fffaf3;
+    padding: 30px 20px;
+    border-radius: 20px;
+    border: 1px solid #e5d2bc;
+    box-shadow: 0 8px 20px #67452f10;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 12px;
+    color: #956c49;
+}
+
+.card p {
+    font-size: 13px;
+    line-height: 1.9;
+    color: #806b59;
+}
+
+/* LETTER */
+
+.letter-section {
+    padding: 80px 20px;
+    background: #e9d9c7;
+}
+
+.letter {
+    max-width: 750px;
+    margin: auto;
+    padding: 40px;
+    background: #fffaf3;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px #67452f20;
+}
+
+.letter h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 42px;
+    color: #a47b56;
+    margin-bottom: 20px;
+}
+
+.letter p {
+    line-height: 2;
+    font-size: 14px;
+    text-align: justify;
+    color: #70594c;
+    margin-bottom: 18px;
+}
+
+.signature {
+    text-align: right;
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    color: #a47b56;
+    margin-top: 25px;
+}
+
+/* SURPRISE */
+
+.surprise {
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.surprise h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.surprise p {
+    line-height: 2;
+    max-width: 550px;
+    margin: 0 auto 20px;
+    color: #806b59;
+}
+
+button {
+    border: none;
+    background: #79563c;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #b58b5c;
+}
+
+.hidden-message {
+    display: none;
+    max-width: 550px;
+    margin: 25px auto 0;
+    padding: 30px;
+    background: #fffaf3;
+    border: 1px solid #e5d2bc;
+    border-radius: 20px;
+    animation: fadeIn 1s;
+}
+
+.hidden-message h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 35px;
+    margin-bottom: 15px;
+    color: #a47b56;
+}
+
+.music-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #79563c;
+    color: white;
+    border: 2px solid #fffaf3;
+    box-shadow: 0 4px 15px rgba(103, 69, 47, 0.4);
+    cursor: pointer;
+    z-index: 999;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+    background: #b58b5c;
+    transform: scale(1.1);
+}
+
+footer {
+    background: #67452f;
+    color: #fff0df;
+    text-align: center;
+    padding: 30px;
+    font-size: 13px;
+    line-height: 2;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width: 600px) {
+    .letter {
+        padding: 25px;
+    }
+
+    .photo-frame {
+        width: 200px;
+        height: 240px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="welcome-overlay">
+    <div class="welcome-card">
+        <h2>Spesial Untuk Ayah 🤎</h2>
+        <p>Ada sebuah kejutan kecil khusus untuk Ayah. Silakan kelik tombol di bawah ini.</p>
+        <button class="start-btn" onclick="startExperience()">Buka Kejutan ♡</button>
+    </div>
+</div>
+
+<header class="hero">
+    <div class="container">
+
+        <div class="top">HARI ISTIMEWA UNTUK SESEORANG YANG ISTIMEWA</div>
+
+        <h1>Selamat Hari<br><span>Ayah! 🤎</span></h1>
+
+        <div class="photo-frame">
+            <img src="ayah.jpg.jpg" alt="Foto Ayah">
+        </div>
+
+        <p>
+            Di balik setiap keluarga yang kuat, terdapat seorang ayah
+            yang kasih sayangnya berbicara lebih lantang daripada kata-kata.
+            Hari ini, kejutan kecil ini disiapkan khusus untukmu
+        </p>
+
+        <a href="#appreciation" class="btn">
+            Open Your Surprise ♡
+        </a>
+
+    </div>
+</header>
+
+<section class="appreciation" id="appreciation">
+
+    <h2 class="title">Pahlawanku Selamanya</h2>
+    <p class="subtitle">Tiga hal yang akan selalu saya syukuri.</p>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">❤️</div>
+            <h3>Kasihmu</h3>
+            <p>
+                Terima kasih karena selalu menyayangi
+                dan memberikan yang terbaik untuk keluarga.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌻</div>
+            <h3>Pengorbananmu</h3>
+            <p>
+                Setiap perjuangan Ayah adalah bukti
+                cinta yang tidak ternilai harganya.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">✨</div>
+            <h3>Kekuatanmu</h3>
+            <p>
+                Ayah adalah sosok yang mengajarkanku
+                arti perjuangan, kesabaran, dan ketulusan.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="letter-section">
+
+    <div class="letter">
+
+        <h2>Untuk Ayahku, ♡</h2>
+
+        <p>
+            Ayah, mungkin aku bukan anak yang selalu
+            pandai mengungkapkan rasa sayang.
+            Ada banyak hal yang ingin aku sampaikan,
+            tetapi terkadang sulit untuk mengatakannya.
+        </p>
+
+        <p>
+            Terima kasih untuk setiap keringat,
+            perjuangan, doa, dan pengorbanan yang
+            Ayah berikan. Aku tahu tidak semua
+            lelah Ayah pernah aku lihat.
+        </p>
+
+        <p>
+            Maaf jika selama ini masih sering membuat
+            Ayah kecewa. Aku berharap suatu saat nanti
+            bisa menjadi anak yang membuat Ayah bangga.
+        </p>
+
+        <p>
+            Semoga Ayah selalu diberikan kesehatan,
+            umur panjang, rezeki yang berlimpah,
+            dan kebahagiaan di setiap langkah.
+            Aku ingin melihat Ayah terus tersenyum.
+        </p>
+
+        <p>
+            Sejauh apa pun aku melangkah,
+            Ayah akan selalu menjadi bagian
+            terpenting dalam hidupku.
+        </p>
+
+        <div class="signature">
+            Dengan segenap cintaku, Anakmu 🤎
+        </div>
+
+    </div>
+
+</section>
+
+<section class="surprise">
+
+    <h2>Satu Pesan Terakhir... 💌</h2>
+
+    <p>
+        Ada satu hal yang mungkin jarang aku ucapkan.
+        Hari ini aku ingin Ayah mengetahuinya.
+    </p>
+
+    <button onclick="showMessage()">
+        Klik di Sini, Ayah ♡
+    </button>
+
+    <div class="hidden-message" id="message">
+
+        <h3>I Love You, Ayah! ❤️</h3>
+
+        <p>
+            Terima kasih sudah menjadi rumah
+            tempatku pulang. Aku tidak membutuhkan
+            Ayah yang sempurna, aku hanya ingin
+            Ayah selalu sehat dan bahagia.
+        </p>
+
+        <p>
+            Semoga Tuhan selalu menjaga Ayah.
+            Aku sayang Ayah, hari ini, besok,
+            dan selamanya.
+        </p>
+
+        <h3>Happy Father's Day! 🤎</h3>
+
+    </div>
+
+</section>
+
+<audio id="bgMusic" loop preload="auto">
+    <source src="lagu-ayah.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung elemen audio.
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()" id="musicToggleBtn" title="Putar / Hentikan Musik" style="display:none;">
+    🎵
+</button>
+
+<footer>
+    Dibuat dengan penuh kasih, khusus untuk Ayah.
+    <br>
+    Selamat Hari Ayah, Pahlawan Terhebatku 🤎
+</footer>
+
+<script>
+function startExperience() {
+    const music = document.getElementById("bgMusic");
+    const overlay = document.getElementById("welcome-overlay");
+    const musicBtn = document.getElementById("musicToggleBtn");
+
+    music.play().then(() => {
+        musicBtn.innerHTML = "🔊";
+    }).catch(error => {
+        console.log("Gagal memutar audio:", error);
+    });
+
+    overlay.style.opacity = "0";
+    overlay.style.visibility = "hidden";
+
+    musicBtn.style.display = "flex";
+}
+
+function showMessage() {
+    const message = document.getElementById("message");
+
+    if (message.style.display === "block") {
+        message.style.display = "none";
+    } else {
+        message.style.display = "block";
+    }
+}
+
+function toggleMusic() {
+    const music = document.getElementById("bgMusic");
+    const btn = document.getElementById("musicToggleBtn");
+
+    if (music.paused) {
+        music.play();
+        btn.innerHTML = "🔊";
+    } else {
+        music.pause();
+        btn.innerHTML = "🎵";
+    }
+}
+</script>
+
+</body>
+</html>
